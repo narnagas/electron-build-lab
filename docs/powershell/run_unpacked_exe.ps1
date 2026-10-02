@@ -1,0 +1,1 @@
+﻿& ".\release\win-unpacked\Electron Build Lab.exe"
