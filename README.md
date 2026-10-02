@@ -46,3 +46,12 @@ The Electron application runs on the desktop. Containers support build tooling a
 - `docs/benchmarks/`: recorded build timings and installer sizes.
 
 The Angular starter is available; Electron implementation, Dockerfiles, and Compose services will be added next. Do not commit credentials, tokens, signing keys, or private environment configuration.
+
+## React reporting and microservice POC
+
+- `react-reports/`: planned standalone React reporting UI with tables, charts, and PDF exports.
+- `reporting-service/`: planned independent .NET reporting API that aggregates permitted data from the existing UI and Admin APIs.
+- `docker/react-reports/` and `docker/reporting-service/`: container configuration placeholders.
+- `docs/reporting/`: reporting architecture and POC scope.
+
+Electron opens React, React calls the reporting service, and the service calls existing APIs. Start with a Daily Orders sample-data example, then integrate live data. These new folders are scaffolding only; their application projects will be generated next.
