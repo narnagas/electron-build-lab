@@ -61,3 +61,4 @@ Electron opens React, React calls the reporting service, and the service calls e
 Start Angular with `npm start` from `angular/`. In a second terminal, run `npm ci` and `npm start` from `electron/`. Electron opens http://localhost:4200 without building or bundling Angular.
 
 From `electron/`, use `npm run pack:win` for a Windows unpacked build and `npm run dist:win` for an NSIS installer. Test the unpacked application on Windows before generating the installer. See `electron/README.md` for configuration and complete commands.
+
