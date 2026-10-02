@@ -2,6 +2,27 @@
 
 A lab for building and packaging an independent Electron desktop shell that loads a hosted web UI, with container tooling for reproducible development and code analysis.
 
+## Angular POC application
+
+`angular/` contains the default standalone Angular CLI starter application (CLI 22.2.1). Keep its dependencies and builds separate from Electron.
+
+Use Node.js 24.19 or a compatible Angular 22 Node.js version. From the repository root:
+
+```sh
+cd angular
+npm ci
+npm start
+```
+
+Open http://localhost:4200. This is the planned local UI URL for the Electron POC; Electron wiring will be added next.
+
+```sh
+npm run build
+npm test -- --watch=false
+```
+
+The production web output is in `angular/dist/electron-build-lab-ui/browser/` and can be served independently. The default starter has no API or authentication dependency.
+
 ## Electron application
 
 - `electron/src/`: main-process and preload code.
@@ -24,4 +45,4 @@ The Electron application runs on the desktop. Containers support build tooling a
 - `docs/architecture/`: design decisions and environment mapping.
 - `docs/benchmarks/`: recorded build timings and installer sizes.
 
-This commit establishes the folder structure only. Application code, dependency versions, Dockerfiles, and Compose services will be added during implementation. Do not commit credentials, tokens, signing keys, or private environment configuration.
+The Angular starter is available; Electron implementation, Dockerfiles, and Compose services will be added next. Do not commit credentials, tokens, signing keys, or private environment configuration.
