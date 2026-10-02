@@ -49,12 +49,12 @@ The Angular starter and Electron desktop shell are available. Dockerfiles and Co
 
 ## React reporting and microservice POC
 
-- `react-reports/`: planned standalone React reporting UI with tables, charts, and PDF exports.
+- `react-reports/`: standalone React reporting POC with sample orders, date filters, a chart, and PDF preview/download.
 - `reporting-service/`: planned independent .NET reporting API that aggregates permitted data from the existing UI and Admin APIs.
 - `docker/react-reports/` and `docker/reporting-service/`: container configuration placeholders.
 - `docs/reporting/`: reporting architecture and POC scope.
 
-Electron opens React, React calls the reporting service, and the service calls existing APIs. Start with a Daily Orders sample-data example, then integrate live data. These new folders are scaffolding only; their application projects will be generated next.
+Electron opens React, React calls the reporting service, and the service calls existing APIs. Start with a Daily Orders sample-data example, then integrate live data. The React POC is implemented; the reporting microservice and container setup remain scaffolds.
 
 ## Run the Electron desktop shell
 
@@ -62,3 +62,9 @@ Start Angular with `npm start` from `angular/`. In a second terminal, run `npm c
 
 From `electron/`, use `npm run pack:win` for a Windows unpacked build and `npm run dist:win` for an NSIS installer. Test the unpacked application on Windows before generating the installer. See `electron/README.md` for configuration and complete commands.
 
+
+## Run React reports
+
+From `react-reports/`, run `npm ci` then `npm start`. Open http://localhost:5173. To use Electron, set `$env:ELECTRON_LAB_URL = "http://localhost:5173"` in PowerShell and run `npm start` from `electron/`.
+
+The React POC uses synthetic data. See `react-reports/README.md` for code structure, build commands, and the planned reporting-service integration.
