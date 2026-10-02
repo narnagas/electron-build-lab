@@ -1,0 +1,50 @@
+{
+  "name": "electron-build-lab-desktop",
+  "version": "0.1.0",
+  "description": "Independent Electron desktop shell for the Angular and React reporting POCs",
+  "main": "src/main.js",
+  "author": "Edgar Villegas",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test",
+    "pack": "electron-builder --dir",
+    "pack:win": "electron-builder --win --x64 --dir",
+    "dist:win": "electron-builder --win nsis --x64"
+  },
+  "devDependencies": {
+    "electron": "44.5.1",
+    "electron-builder": "26.15.3"
+  },
+  "build": {
+    "appId": "com.lalagunatek.electronbuildlab",
+    "productName": "Electron Build Lab",
+    "asar": true,
+    "directories": {
+      "output": "release",
+      "buildResources": "assets"
+    },
+    "files": [
+      "src/**/*",
+      "config/**/*",
+      "package.json",
+      "!src/**/*.test.js"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "artifactName": "Electron-Build-Lab-${version}-setup.${ext}"
+    }
+  }
+}

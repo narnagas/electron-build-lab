@@ -45,7 +45,7 @@ The Electron application runs on the desktop. Containers support build tooling a
 - `docs/architecture/`: design decisions and environment mapping.
 - `docs/benchmarks/`: recorded build timings and installer sizes.
 
-The Angular starter is available; Electron implementation, Dockerfiles, and Compose services will be added next. Do not commit credentials, tokens, signing keys, or private environment configuration.
+The Angular starter and Electron desktop shell are available. Dockerfiles and Compose services will be added next. Do not commit credentials, tokens, signing keys, or private environment configuration.
 
 ## React reporting and microservice POC
 
@@ -55,3 +55,9 @@ The Angular starter is available; Electron implementation, Dockerfiles, and Comp
 - `docs/reporting/`: reporting architecture and POC scope.
 
 Electron opens React, React calls the reporting service, and the service calls existing APIs. Start with a Daily Orders sample-data example, then integrate live data. These new folders are scaffolding only; their application projects will be generated next.
+
+## Run the Electron desktop shell
+
+Start Angular with `npm start` from `angular/`. In a second terminal, run `npm ci` and `npm start` from `electron/`. Electron opens http://localhost:4200 without building or bundling Angular.
+
+From `electron/`, use `npm run pack:win` for a Windows unpacked build and `npm run dist:win` for an NSIS installer. Test the unpacked application on Windows before generating the installer. See `electron/README.md` for configuration and complete commands.
